@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.longyu.user.mapper.WebUserMapper">
+
+    <resultMap id="BaseResultMap" type="cn.longyu.user.domain.WebUser">
+            <id property="id" column="id" />
+            <result property="nickName" column="nick_name" />
+            <result property="gender" column="gender" />
+            <result property="avatarUrl" column="avatar_url" />
+            <result property="phone" column="phone" />
+            <result property="accountName" column="account_name" />
+            <result property="accountPwd" column="account_pwd" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,nick_name,gender,avatar_url,phone,account_name,
+        account_pwd
+    </sql>
+</mapper>

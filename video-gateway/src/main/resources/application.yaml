@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+#          路由id 应保持唯一
+        - id:
+#          目标地址
+          uri: lb://auth-service
+#          拦截地址
+          predicates:
+            - Path=/auth/**  # 访问user路径转发用户服务
+    nacos:
+      discovery:
+        server-addr: 192.168.0.28:8848
+server:
+  port: 8080
