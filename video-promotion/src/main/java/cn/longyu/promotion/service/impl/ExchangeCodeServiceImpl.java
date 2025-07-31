@@ -70,8 +70,8 @@ public class ExchangeCodeServiceImpl extends ServiceImpl<ExchangeCodeMapper, Exc
 
     /**
      * 修改兑换码的状态
-     * @param id
-     * @param mark
+     * @param id dsa
+     * @param mark sd
      */
     @Override
     public boolean updateExchangeMark(long id, boolean mark) {

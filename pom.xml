@@ -15,6 +15,7 @@
         <module>video-api</module>
         <module>video-pk</module>
         <module>video-promotion</module>
+        <module>video_remark</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -70,6 +71,7 @@
                 <scope>runtime</scope>
                 <version>${jwt.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
     <dependencies>

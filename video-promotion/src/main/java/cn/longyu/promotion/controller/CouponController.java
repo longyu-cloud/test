@@ -37,7 +37,7 @@ public class CouponController {
      * 分页查询优惠卷
      */
     @GetMapping("page")
-    public Result queryCouponByPage(CouponQuery query){
+    public Result<PageDTO<CouponPageVO>> queryCouponByPage(CouponQuery query){
        PageDTO<CouponPageVO> page=service.queryCouponByPage(query);
         return Result.ok(page);
     }
@@ -55,7 +55,7 @@ public class CouponController {
      * 条件：手动领取 优惠卷状态为发放中
      */
     @PutMapping("list")
-    public Result queryIssuingCoupon(Long userid){
+    public Result<List<CouponVO>> queryIssuingCoupon(Long userid){
         List<CouponVO> list=service.queryIssuingCoupon(userid);
         return Result.ok(list);
     }
@@ -64,8 +64,8 @@ public class CouponController {
      * 领取优惠卷
      * 将用户的id和优惠卷id
      */
-    @PostMapping("add")
-    public Result addIssuingCoupon(Long userid ,Long couponId){
+    @PostMapping("add11")
+    public Result<Integer> addIssuingCoupon(Long userid ,Long couponId){
         int result = service.addIssuingCoupon(userid, couponId);
         return Result.ok(result);
     }

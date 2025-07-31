@@ -4,8 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.core.env.Environment;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
@@ -17,6 +16,8 @@ import java.net.InetAddress;
 @Slf4j
 @SpringBootApplication
 @MapperScan("cn.longyu.promotion.mapper")
+//动态代理对象
+@EnableAspectJAutoProxy(exposeProxy = true)
 public class PromotionApplication {
     public static void main(String[] args) {
 

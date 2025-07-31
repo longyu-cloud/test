@@ -19,6 +19,13 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.0.28:8848
+  rabbitmq:
+    host: 192.168.112.102
+    port: 5672
+    username: itheima
+    password: 123321
+    publisher-confirm-type: correlated  # 开启发布确认，可选 none（关闭）、correlated（异步回调）、simple（同步等待确认）
+    publisher-returns: true  # 开启发布返回
 mybatis-plus:
   mapper-locations: classpath:cn.longyu.user.mapper.*.xml
   configuration:

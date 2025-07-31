@@ -23,31 +23,6 @@ import java.time.LocalDateTime;
 public class UserCouponServiceImpl extends ServiceImpl<UserCouponMapper, UserCoupon>
     implements UserCouponService{
 
-    @Autowired
-    private ExchangeCodeService codeService;
-    @Autowired
-    private CouponService couponService;
-
-
-    /**
-     * 保存到用户表
-     */
-    public void saveUserCoupon(Long userid,Long couponId){
-
-        Coupon coupon = couponService.getById(couponId);
-        UserCoupon userCoupon = new UserCoupon();
-        LocalDateTime termBeginTime = coupon.getTermBeginTime();
-        if (termBeginTime == null) {
-            termBeginTime = LocalDateTime.now();
-            LocalDateTime termEndTime= termBeginTime.plusDays(coupon.getTermDays());
-            userCoupon.setTermBeginTime(termBeginTime).setTermEndTime(termEndTime);
-        }else {
-            userCoupon.setTermBeginTime(coupon.getTermBeginTime()).setTermEndTime(coupon.getTermEndTime());
-        }
-        userCoupon.setUserId(userid).setStatus(UserCouponStatus.UNUSED).setCouponId(couponId);
-        this.save(userCoupon);
-
-    }
 
 }
 

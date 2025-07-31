@@ -1,5 +1,6 @@
 package cn.longyu.promotion.service;
 
+import cn.longyu.promotion.domain.po.Coupon;
 import cn.longyu.promotion.domain.po.Promotion;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -9,5 +10,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2025-07-17 17:36:37
 */
 public interface PromotionService extends IService<Promotion> {
-
+    void saveUserCoupon(Long userid, Long couponId, Coupon coupon);
 }
